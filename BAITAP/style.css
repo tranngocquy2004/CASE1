@@ -2,12 +2,10 @@
 }
 @media only screen and (max-width: 900) {   
 }
-@media only screen and (max-width: 750) {   
-}
   *{
     font-family: Quicksand, Arial, 'Helvetica Neue', Helvetica, sans-serif;}
 .header{
-    background: linear-gradient(rgba(153, 55, 55, 0.5),#d0e4e2) , url("t2.jpg");
+    background: linear-gradient(rgba(218, 201, 201, 0.5),#efefef) , url("t2.jpg");
    
     background-size: cover;
     background-position: center;
@@ -18,13 +16,6 @@
     height: 70px;
     border-radius: 25px;
     margin-top: 10px;
-}
-.v:hover{
-    color: #ffbb00;
-    transition: 2s;
-    position:absolute;
-
-    
 }
 .item {
     padding: 0px 10px;
@@ -43,14 +34,15 @@
     transition: color 0.5s ;
     z-index: 1;
     text-align: center;
-    color: rgb(195, 9, 241);
+    color: rgb(217, 255, 4);
 }
 .item a span{
     width: 0%;
     height: 100%;
     position: absolute;
-    text-align: center;
-    background: #ffbb00;
+    left: 0;
+    top: 0;
+    background: #1b534e;
     z-index: -1;
     transition: 0.5s;
     border-radius: 20px;
@@ -93,7 +85,6 @@
 .item1{
     display: flex;
     flex-wrap: wrap;
-    transform: translateY(7px);
 }
 #footer{
     background: #efefef;
@@ -146,7 +137,7 @@
     font-size: 20px;
     line-height: 40px;
     margin: 40px 5px 0;
-    color: #009688;
+    color: #f00988;
     cursor: pointer;
     transition: .5s;
 }
@@ -189,6 +180,15 @@
     padding-bottom: 10px;
 
 }
-.social-link i:hover{
-    color:#ff00d4;
+.social-link .fb:hover{
+    color:#00a2ff;
+}
+.social-link .ist:hover{
+    color: rgb(218, 4, 218);
+}
+.social-link .tw:hover{
+    color:#00a2ff;
+}
+.social-link .yt:hover{
+    color: red;
 }
