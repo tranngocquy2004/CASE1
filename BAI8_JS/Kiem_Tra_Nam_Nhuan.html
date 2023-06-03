@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="nam" placeholder="Nhập số năm">
+    <button id="zo" onclick="namNhuan()">Zô</button>
+    <script>
+        function namNhuan() {
+            let a = +document.getElementById("nam").value
+            console.log(a)
+            if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0) {
+                result = "Năm Nhuận"
+        } else {
+            result = "Năm Thường"
+        }
+        alert(result)
+    }
+   
+    </script>
+</body>
+</html>

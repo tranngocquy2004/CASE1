@@ -8,14 +8,11 @@
 </head>
 <body>
     <script>
-      let Year =  +prompt("Nhập vào số năm bạn muốn")
-      let Month = +prompt("Nhập vào số tháng bạn muốn")
-      let Day = +prompt("Nhập vào số ngày bạn muốn")
-      let total = Day + "-" + Month + "-" + Year
-      alert(total)
-
-
-
+        const sotienvay = +prompt("Nhập số tiền vay")
+        const laisuat = +prompt("Nhập lãi suất bạn muốn")
+        const sonam = +prompt("Nhập số năm")
+        const total = sotienvay + sonam * (sotienvay * laisuat)
+        alert(total)
 
     </script>
 </body>
