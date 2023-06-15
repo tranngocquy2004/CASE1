@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Môn Toán</p>
+    <input type="text" id="toan">
+    <p>Môn Văn</p>
+    <input type="text" id="van">
+    <p>Môn Anh</p>
+    <input type="text" id="anh">
+    <form>
+        <select id="op">
+            <option value="0.75">KV1</option>
+            <option value="0.5">KV2-NT</option>
+            <option value="0.25">KV2</option>
+            <option value="0">KV3</option>
+        </select>
+    </form>
+        <button onclick="diemDH()">Tính điểm</button>
+        <p id="id"></p>
+        <script>
+            function diemDH(){
+            let a = +document.getElementById("toan").value
+            let b = +document.getElementById("van").value
+            let c = +document.getElementById("anh").value
+            let d = +document.getElementById("op").value
+            switch((d)){
+                case 0.75: 
+                    result = a + b + c + 0.75;
+                    break;
+                case 0.5:
+                    result = a + b + c + 0.25;
+                    break;
+                case 0.25:
+                    result = a + b + c + 0.5;
+                    break;
+                default:
+                    result = a + b + c;
+                    break;
+
+            } document.getElementById("id").innerText = result;
+        }
+        </script>
+    
+</body>
+</html>

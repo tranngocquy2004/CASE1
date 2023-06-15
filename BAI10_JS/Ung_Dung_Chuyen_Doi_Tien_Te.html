@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Amount</p>
+    <input type="number" id="so">
+    <p>From Currency</p>
+    <select>
+        <option id="no1">VNĐ</option>
+
+    </select>
+    <p>To Currency</p>
+    <select>
+        <option id="no3">Yên Nhật</option>
+     
+
+    </select>
+    <br>
+    <br>
+    <button onclick="tienTe()">Convert</button>
+    <script>
+        function tienTe(){
+            let a = +document.getElementById("so").value
+            let b = +document.getElementById("no3")
+            b = 0.0059
+            let total = a * b
+            alert(total +`Yên`) 
+            
+        }
+
+    </script>
+</body>
+</html>

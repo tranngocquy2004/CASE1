@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="id"></p>
+    <script>
+        function canNang(){
+            let a = +prompt("Nhập cân nặng")
+            let b = +prompt("Nhập chiều cao")
+            let total =  a / (b * b) 
+            if (total > 40 ) {
+                result = "Béo phì cấp độ III"
+            }else if (total > 30 && total < 35){
+                result = "Béo phì cấp đồ II"
+            }else if (total > 25 && total < 30){
+                result = "Béo phì cấp độ I"
+            }else if (total > 18.5 && total < 25){
+                result = "Bình thường"
+            }else if (total > 17 && total < 18.5){
+                result = "Gầy cấp độ I"
+            }else if (total > 16 && total < 17){
+                result = "Gầy cấp độ II"
+            }else if (total < 16){
+                result = "Gầy cấp độ III"
+            }
+            alert(result)
+        
+        }
+        canNang()
+    </script>
+</body>
+</html>

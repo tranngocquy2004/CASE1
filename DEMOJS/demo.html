@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nhietDo(){
+            let a = +prompt("Nhập nhiệt độ hiện tại bạn êy")
+           while(a < 100 && a > 20){
+                if(a > 100){
+                    alert("Giảm nhiệt độ xuống bạn êy")
+                    break;
+                }else if (a < 20){
+                    alert("Tăng nhiệt độ lên bạn êy")
+                    break;
+                }
+           }
+          
+        }
+        nhietDo()
+    </script>
+</body>
+</html>

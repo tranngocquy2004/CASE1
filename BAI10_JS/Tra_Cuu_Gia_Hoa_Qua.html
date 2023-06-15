@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p>Giá Hoa Quả</p>
+   <form>
+    <select id="no2">
+        <option value="1">Ổi</option>
+        <option value="2">Dưa hấu</option>
+        <option value="3">Táo</option>
+        <option value="4">Xoài</option>
+        <option value="5">Cam</option>
+        <option value="6">Chôm chôm</option>
+        <option value="7">Măng cụt</option>
+    </select>
+    </form>
+    <button onclick="hoaQua()">Xem giá</button>
+    <p id="no3"></p>
+    <script>
+        function hoaQua() {
+           let a = document.getElementById("no2").value
+           let b = document.getElementById("no3")
+           
+            switch(parseInt(a)) {
+                case 1:
+                case 2:
+                    result = "20000đ/kg";
+                   break;
+                case 3:
+                case 4:
+                    result = "30000đ/kg";
+                    break;
+                case 5:
+                case 6:
+                    result = "40000đ/kg";
+                    break;
+                case 7:
+                    result = "50000đ/kg";
+                    break;
+              
+            } document.getElementById("no3").innerText = result
+        }
+    </script>
+   
+</body>
+</html>
