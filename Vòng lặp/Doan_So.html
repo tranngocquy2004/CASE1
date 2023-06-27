@@ -15,14 +15,20 @@
             let turn = 0
             do {
                 turn++
-                if (a == secretNumber){
+                if(a == secretNumber){
                     alert("Bạn đoán đúng gòi")
+                    break;
+                }
+                else if 
+                    (turn >= 3){
+                    alert("Bạn đã ra đê!");
                     break;
                 }else{
                     alert("Bạn đoán sai rồi")
                     break;
 
                 }
+                
                 
             }while(a != secretNumber)
         }
