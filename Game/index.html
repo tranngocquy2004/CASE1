@@ -5,30 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="ball.js"></script>
-
+    <script src="paddle.js"></script>
 </head>
 <body>
     <canvas id="game" width="1350px" height="630px" style="background-color: rgb(136, 255, 0);"></canvas>
     <script>
         let a = document.getElementById("game")
         let ball = new Ball();
+        let paddle = new Paddle();
+        let isGameOver = false;
         function main(){
+            if(!isGameOver){
             let ctx = a.getContext("2d")
             ctx.clearRect(0, 0, game.width, game.height);
+            paddle.display(a)
             ball.display(a)
             diChuyenbong()
+            ballChampaddle()
+            if(ball.y > game.height - 20){
+                isGameOver = true
+            }
             requestAnimationFrame(main);
+            }else {
+                alert('Hơi non')
+            }
+        
         }
         main()
+        window.addEventListener("keydown", function (event) {
+            if(event.keyCode == 37){
+                paddle.x -= paddle.speed
+            }
+            if(event.keyCode == 39){
+                paddle.x += paddle.speed
+            }
+            if(paddle.x < 0){ paddle.x = 0; }
+            else if(paddle.x > game.width - paddle.width) { paddle.x = game.width - paddle.width}
+        })
         function diChuyenbong(){ 
-            if(ball.x < 25 || ball.x > game.width){
+            if(ball.x < 20 || ball.x > game.width - 20){ 
                 ball.dx = -ball.dx;
             }
-            if(ball.y < 20 || ball.y > game.height){
+            if(ball.y < 20){
                 ball.dy = -ball.dy;
             }
         ball.x += ball.dx;
         ball.y += ball.dy;
+        }
+        function ballChampaddle(){
+            if(ball.x >= paddle.x && ball.x + 20 <= paddle.x + paddle.width && ball.y + 20 >= game.height - paddle.height) {
+                ball.dy = -ball.dy
+            }
         }
     </script>
 </body>
