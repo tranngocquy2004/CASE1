@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ball.js"></script>
+
+</head>
+<body>
+    <canvas id="game" width="1350px" height="630px" style="background-color: rgb(136, 255, 0);"></canvas>
+    <script>
+        let game = document.getElementById("game")
+        let ball = new Ball();
+        function main(){
+            ball.display(game)
+            let ctx = canvas.getContext("2d")
+            ctx.clearRect(0, 0, game.width, game.height);
+            diChuyenbong()
+            requestAnimationFrame(main);
+        }
+        main()
+        function diChuyenbong(){
+        ball.x += 8;
+        ball.y += 8;
+        }
+    </script>
+</body>
+</html>
