@@ -2,10 +2,9 @@ class Paddle{
     constructor(){
         this.width = 200;
         this.height =  20;
-        this.x = 620;
-        this.y = 600;
-        this.speed = 50;
-       
+        this.x = 200;
+        this.y = 770;
+        this.speed = 30;
     }
     display(canvas){
         let ctx = canvas.getContext("2d");
@@ -15,5 +14,4 @@ class Paddle{
         ctx.fill();
         ctx.closePath()
     }
-   
 }

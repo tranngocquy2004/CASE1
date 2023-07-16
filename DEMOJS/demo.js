@@ -1,9 +1,10 @@
-function sum_even_numbers(){
-    var sum = 0
-    for( let i = 1; i <= 1000; i++ ) {
-        if (i % 2 == 0){
-            sum = sum + i
-        } 
-    } 
-    return sum; 
+var day = "Mon"; 
+var message = ""; 
+ 
+switch(day){ 
+case "Mon": message = "Ngày đầu tuần"; 
+case "Wed": message = "Ngày giữa tuần"; 
+case "Sat": 
+case "Sun": message = "Ngày nghỉ"; 
 }
+document.write(day);
