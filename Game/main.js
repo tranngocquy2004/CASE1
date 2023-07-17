@@ -1,26 +1,28 @@
 let canvas = document.getElementById("game");
 let ball = new Ball(canvas);
 let paddle = new Paddle(canvas);
-let brick = new Brick(canvas);
 let bricks = [];
+// let brick = new Brick(canvas);
 let isGameOver = false;
         function main(){
             if(!isGameOver){
             clearSceen()
             showBricks()
-            brick.display(canvas)
+            // brick.display(canvas)
             paddle.display(canvas)
             ball.display(canvas)
             diChuyenbong()
             ballChampaddle()
             checkCollision();
+            requestAnimationFrame(main);
+
             if(ball.y > canvas.height - 15){
                 isGameOver = true
             }
-            requestAnimationFrame(main);
             }else {
-                alert('CoN gÀ cOn')
+                alert('Game Over!!')
             }
+
         }
         main()
         function clearSceen(){
@@ -29,7 +31,7 @@ let isGameOver = false;
         }
         function createBricks() {
             let col = canvas.width / (BRICK_WIDTH + SPACE_BIRCK);
-            let row = 5;
+            let row = 3;
             for (let i = 0; i < col; i++) {
                 for (let j = 0; j < row; j++) {
                     let brick = new Brick(canvas);
@@ -45,7 +47,6 @@ let isGameOver = false;
                 bricks[i].display();
             }
         }
-        
         function checkCrash(obj1, obj2) {
             let left1 = obj1.x - obj1.radius;
             let right1 = obj1.x + obj1.radius;
@@ -97,8 +98,32 @@ let isGameOver = false;
         ball.x += ball.dx;
         ball.y += ball.dy;
         }
+        // if (
+
+        //     ball.y + ball.dy >= paddle.y - paddle.height &&
+        
+        //     ball.x + ball.dx >= paddle.x &&
+        
+        //     ball.x + ball.dx <= paddle.x + paddle.width
+        
+        //   ) {
+        
+        //     ball.dy = -ball.dy;
+        
+        //   }
+        // }
         function ballChampaddle(){
-            if(ball.x >= paddle.x && ball.x + 20 <= paddle.x + paddle.width && ball.y + 20 >= canvas.height - paddle.height) {
-                ball.dy = -ball.dy
-            }
+            if (
+
+                ball.y + ball.dy >= paddle.y - paddle.height &&
+            
+                ball.x + ball.dx >= paddle.x &&
+            
+                ball.x + ball.dx <= paddle.x + paddle.width
+            
+              ) {
+            
+                ball.dy = -ball.dy;
+            
+              }
         }

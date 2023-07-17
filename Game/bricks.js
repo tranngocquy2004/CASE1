@@ -5,7 +5,7 @@ class Brick{
         this.y = 10;
         this.width = BRICK_WIDTH;
         this.height = BRICK_HEIGHT;
-        this.color = "black";
+        this.color = "yellow";
     }
     display(){
         let ctx = this.canvas.getContext('2d');
