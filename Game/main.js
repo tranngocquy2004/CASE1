@@ -2,13 +2,12 @@ let canvas = document.getElementById("game");
 let ball = new Ball(canvas);
 let paddle = new Paddle(canvas);
 let bricks = [];
-// let brick = new Brick(canvas);
 let isGameOver = false;
+let isGameWin = false;
         function main(){
             if(!isGameOver){
             clearSceen()
             showBricks()
-            // brick.display(canvas)
             paddle.display(canvas)
             ball.display(canvas)
             diChuyenbong()
@@ -22,7 +21,6 @@ let isGameOver = false;
             }else {
                 alert('Game Over!!')
             }
-
         }
         main()
         function clearSceen(){
@@ -32,6 +30,7 @@ let isGameOver = false;
         function createBricks() {
             let col = canvas.width / (BRICK_WIDTH + SPACE_BIRCK);
             let row = 3;
+            // let MaxScore = col * row;
             for (let i = 0; i < col; i++) {
                 for (let j = 0; j < row; j++) {
                     let brick = new Brick(canvas);
@@ -71,8 +70,7 @@ let isGameOver = false;
            }else{
                ball.dx = -ball.dx;
         }
-             bricks.splice(i, 1);
-                    
+             bricks.splice(i, 1);               
             break;
          }
              }
@@ -98,32 +96,12 @@ let isGameOver = false;
         ball.x += ball.dx;
         ball.y += ball.dy;
         }
-        // if (
-
-        //     ball.y + ball.dy >= paddle.y - paddle.height &&
-        
-        //     ball.x + ball.dx >= paddle.x &&
-        
-        //     ball.x + ball.dx <= paddle.x + paddle.width
-        
-        //   ) {
-        
-        //     ball.dy = -ball.dy;
-        
-        //   }
-        // }
         function ballChampaddle(){
             if (
-
-                ball.y + ball.dy >= paddle.y - paddle.height &&
-            
-                ball.x + ball.dx >= paddle.x &&
-            
-                ball.x + ball.dx <= paddle.x + paddle.width
-            
-              ) {
-            
-                ball.dy = -ball.dy;
-            
+                ball.y + ball.dy >= paddle.y  &&
+                ball.x + ball.dx >= paddle.x &&           
+                ball.x + ball.dx <= paddle.x + paddle.width           
+              ) {           
+                ball.dy = -ball.dy;           
               }
         }

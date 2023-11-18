@@ -3,7 +3,7 @@ class Paddle{
         this.canvas = canvas;
         this.width = 150;
         this.height =  20;
-        this.x = 200;
+        this.x = 250;
         this.y = 620;
         this.speed = 30;
     }

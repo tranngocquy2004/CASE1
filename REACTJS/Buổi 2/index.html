@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isValidAccount(account) {
+  const accountRegex = /^[_a-z0-9]{6,}$/;
+  return accountRegex.test(account);
+}
+
+const account = "12345";
+if (isValidAccount(account)) {
+  console.log("Email hợp lệ");
+} else {
+  console.log("Email không hợp lệ");
+}
+    </script>
+</body>
+</html>
