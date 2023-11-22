@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ThongTin {
+  constructor(ten, moTa) {
+    this.ten = ten;
+    this.moTa = moTa;
+  }
+
+  tinhToan(giaTri = 1) {
+    return giaTri * 3;
+  }
+}
+
+class HinhHoc extends ThongTin {
+  constructor(ten, moTa, chieuDai) {
+    super(ten, moTa);
+    this.chieuDai = chieuDai;
+  }
+
+  tinhToan(giaTri) {
+   
+    const ketQuaCha = super.tinhToan(giaTri);
+    return this.chieuDai * ketQuaCha;
+  }
+}
+    const hinhHoc = new HinhHoc("Hình học", "Mô tả hình học", 5);
+
+        console.log(hinhHoc.ten);     
+        console.log(hinhHoc.moTa);    
+        console.log(hinhHoc.chieuDai); 
+
+                console.log(hinhHoc.tinhToan(2)); 
+    </script>
+</body>
+</html>

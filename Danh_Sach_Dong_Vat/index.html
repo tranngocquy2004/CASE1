@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class SoThu {
+  constructor() {
+    this.danhSachDongVat = new Set();
+  }
+
+  themDongVat(dongVat) {
+    this.danhSachDongVat.add(dongVat);
+    console.log(`Đã thêm ${dongVat} vào danh sách quản lý.`);
+  }
+
+  kiemTraDongVatTonTai(dongVat) {
+    if (this.danhSachDongVat.has(dongVat)) {
+      console.log(`${dongVat} đã có trong danh sách quản lý.`);
+    } else {
+      console.log(`${dongVat} chưa có trong danh sách quản lý.`);
+    }
+  }
+
+  xoaDongVat(dongVat) {
+    this.danhSachDongVat.delete(dongVat);
+    console.log(`Đã xóa ${dongVat} khỏi danh sách quản lý.`);
+  }
+
+  inDanhSachDongVat() {
+    console.log("Danh sách các loài động vật trong sở thú:");
+    this.danhSachDongVat.forEach((dongVat) => {
+      console.log(dongVat);
+    });
+  }
+}
+
+const soThu = new SoThu();
+
+soThu.themDongVat("Sư tử");
+soThu.themDongVat("Hổ");
+soThu.themDongVat("Gấu");
+
+soThu.kiemTraDongVatTonTai("Hổ");
+soThu.kiemTraDongVatTonTai("Báo");
+
+soThu.xoaDongVat("Gấu");
+
+soThu.inDanhSachDongVat();
+    </script>
+</body>
+</html>
